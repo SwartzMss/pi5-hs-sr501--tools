@@ -1,5 +1,6 @@
 from gpiozero import MotionSensor
 import time
+import signal
 
 
 def monitor(pin: int = 18) -> None:
@@ -17,11 +18,11 @@ def monitor(pin: int = 18) -> None:
     time.sleep(2)  # allow the sensor to stabilize
     print("Ready")
 
+    sensor.when_motion = lambda: print("Motion detected!")
+    sensor.when_no_motion = lambda: print("No motion.")
+
     try:
-        while True:
-            sensor.wait_for_motion()
-            print("Motion detected!")
-            sensor.wait_for_no_motion()
+        signal.pause()
     except KeyboardInterrupt:
         print("Exiting...")
     finally:
