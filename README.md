@@ -2,6 +2,8 @@
 
 本仓库提供树莓派 5 (Pi5) 搭配 HS-SR501 红外人体感应传感器的基本示例代码。
 
+<img src="doc/device.jpg" alt="Device" width="300" />
+
 ## 硬件连接
 1. **VCC** 接树莓派 5 的 `5V` 供电引脚。
 2. **GND** 接树莓派 5 的 `GND` 引脚。
