@@ -12,7 +12,7 @@ def monitor(pin: int = 18) -> None:
         BCM pin number where the sensor output is connected.
     """
 
-    sensor = MotionSensor(pin, inactive_time=2.0)
+    sensor = MotionSensor(pin)
 
     print("PIR Module Test (press Ctrl+C to exit)")
     time.sleep(2)  # allow the sensor to stabilize
