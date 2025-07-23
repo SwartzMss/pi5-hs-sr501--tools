@@ -17,7 +17,9 @@ HS-SR501 模块板上带有用于设定探测范围和触发间隔的两个电�
 顺时针旋转延迟时间变长，逆时针缩短时间。
 
 ## 运行示例
-确保系统中安装了 [gpiozero](https://pypi.org/project/gpiozero/) 模块（在官方 Raspberry Pi OS 中默认已提供），然后执行：
+```bash
+pip install lgpio gpiozero
+```
 
 ```bash
 python3 main.py [--pin GPIO编号]
