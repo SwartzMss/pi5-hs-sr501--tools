@@ -1,5 +1,5 @@
+from gpiozero import MotionSensor
 import time
-import RPi.GPIO as GPIO
 
 
 def monitor(pin: int = 18) -> None:
@@ -11,8 +11,7 @@ def monitor(pin: int = 18) -> None:
         BCM pin number where the sensor output is connected.
     """
 
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(pin, GPIO.IN)
+    sensor = MotionSensor(pin)
 
     print("PIR Module Test (press Ctrl+C to exit)")
     time.sleep(2)  # allow the sensor to stabilize
@@ -20,16 +19,13 @@ def monitor(pin: int = 18) -> None:
 
     try:
         while True:
-            if GPIO.input(pin):
-                print("Motion detected!")
-                # Wait for the sensor to reset
-                while GPIO.input(pin):
-                    time.sleep(0.1)
-            time.sleep(0.1)
+            sensor.wait_for_motion()
+            print("Motion detected!")
+            sensor.wait_for_no_motion()
     except KeyboardInterrupt:
         print("Exiting...")
     finally:
-        GPIO.cleanup()
+        sensor.close()
 
 
 if __name__ == "__main__":

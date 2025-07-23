@@ -8,12 +8,10 @@
 3. **OUT** 接树莓派 5 的 `BCM 18` (物理引脚 12)，或根据需要选择其他 GPIO 引脚。
 
 ## 运行示例
-确保系统中安装了 [RPi.GPIO](https://pypi.org/project/RPi.GPIO/) 模块，然后执行：
+确保系统中安装了 [gpiozero](https://pypi.org/project/gpiozero/) 模块（在官方 Raspberry Pi OS 中默认已提供），然后执行：
 
 ```bash
 python3 main.py [--pin GPIO编号]
 ```
 
-其中 `--pin` 用于指定传感器 OUT 引脚连接的 BCM 编号，默认值为 `18`。
-脚本会在终端中打印“Motion detected!”来表示检测到人体红外信号。
-
+其中 `--pin` 用于指定传感器 OUT 引脚连接的 BCM 编号，默认值为 `18`。脚本会在终端中打印“Motion detected!”来表示检测到人体红外信号。
