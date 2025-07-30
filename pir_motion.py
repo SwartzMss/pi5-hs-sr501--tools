@@ -3,7 +3,7 @@ import time
 import signal
 
 
-def monitor(pin: int = 18) -> None:
+def monitor(pin: int = 23) -> None:
     """Monitor the HS-SR501 sensor and print when motion is detected.
 
     Parameters

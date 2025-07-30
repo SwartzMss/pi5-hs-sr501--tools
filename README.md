@@ -57,4 +57,4 @@ pip install lgpio gpiozero
 python3 main.py [--pin GPIO编号]
 ```
 
-其中 `--pin` 用于指定传感器 OUT 引脚连接的 BCM 编号，默认值为 `18`。脚本会在终端打印“Motion detected!”和“No motion.”，分别表示检测到动作或恢复为无人状态。
+其中 `--pin` 用于指定传感器 OUT 引脚连接的 BCM 编号，默认值为 `23`。脚本会在终端打印“Motion detected!”和“No motion.”，分别表示检测到动作或恢复为无人状态。

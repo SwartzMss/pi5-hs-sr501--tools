@@ -7,7 +7,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--pin",
         type=int,
-        default=18,
+        default=23,
         help="BCM GPIO pin connected to the sensor's OUT pin",
     )
     return parser.parse_args()
